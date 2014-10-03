@@ -94,3 +94,8 @@ Examples:
     }
   }
   ```
+
+
+### Dependencies
+
+- https://github.com/shagabutdinov/sublime-status-message
