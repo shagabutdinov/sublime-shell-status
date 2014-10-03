@@ -1,0 +1,17 @@
+[
+  {
+    "caption": "Preferences: ShellStatus Settings – Default",
+    "command": "open_file",
+    "args": {
+      "file": "${packages}/ShellStatus/ShellStatus.sublime-settings"
+    }
+  },
+
+  {
+    "caption": "Preferences: ShellStatus Settings – User",
+    "command": "open_file",
+    "args": {
+      "file": "${packages}/User/ShellStatus.sublime-settings"
+    }
+  }
+]

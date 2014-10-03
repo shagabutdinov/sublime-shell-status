@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+STDOUT.write("ω#{Time.new.strftime("%H:%M")}\t\t")
+
+branch = `git branch 2> /dev/null | grep "*"`.gsub('* ', '')
+if branch.empty?()
+  branch = `hg branch 2> /dev/null`
+end
+
+if !branch.empty?()
+  STDOUT.write("☢#{branch.strip()}\t\t")
+end
+
+battery = `acpi 2> /dev/null`
+if !battery.empty?()
+  value = battery.match(/(\d+)%/)
+  if !value.nil?() && value[1].to_i() < 50
+    STDOUT.write("🔋 #{value}\t\t")
+  end
+end
+
+STDOUT.write("Ω #{ARGV[0].gsub(/.*\/server.*?\/.*?\//, '')}\t\t")
