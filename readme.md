@@ -6,7 +6,7 @@ Run shell command and output its result to status bar.
 ### Demo
 
 ![Notebook screenshot](https://raw.github.com/shagabutdinov/sublime-shell-status/master/screenshot.png)
-![Notebook screenshot without battery](https://raw.github.com/shagabutdinov/sublime-shell-status/master/screenshot without battery.png)
+![Notebook screenshot without battery](https://raw.github.com/shagabutdinov/sublime-shell-status/master/screenshot_without_battery.png)
 
 
 ### Installation
