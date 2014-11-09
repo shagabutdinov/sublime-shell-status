@@ -98,4 +98,4 @@ Examples:
 
 ### Dependencies
 
-- https://github.com/shagabutdinov/sublime-status-message
+* [StatusMessage](https://github.com/shagabutdinov/sublime-status-message)

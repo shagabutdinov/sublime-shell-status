@@ -1,8 +1,16 @@
 import sublime
 import sublime_plugin
-from StatusMessage import status_message
+
 import os
 import subprocess
+
+try:
+  from StatusMessage import status_message
+except ImportError:
+  sublime.error_message("Dependency import failed; please read readme for " +
+   "ShellStatus plugin for installation instructions; to disable this " +
+   "message remove this plugin")
+
 
 class ShellStatusListener(sublime_plugin.EventListener):
   def on_activated_async(self, view):
