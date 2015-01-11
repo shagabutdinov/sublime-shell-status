@@ -20,11 +20,17 @@ class ShellStatusListener(sublime_plugin.EventListener):
     if command == 'DEFAULT':
       command = sublime.packages_path() + '/ShellStatus/sublime-status'
 
-    if view.file_name() == None or command == None:
+    if command == None:
       return
 
-    path = os.path.dirname(view.file_name())
-    process = subprocess.Popen([command, view.file_name()],
+    args = [command]
+    if view.file_name() != None:
+      path = os.path.dirname(view.file_name())
+      append(args, view.file_name())
+    else:
+      path = '/'
+
+    process = subprocess.Popen(args,
       stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=path)
 
     status, err = process.communicate()

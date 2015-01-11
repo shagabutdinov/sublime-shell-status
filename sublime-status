@@ -19,4 +19,6 @@ if !battery.empty?()
   end
 end
 
-STDOUT.write("Ω #{ARGV[0].gsub(/.*\/server.*?\/.*?\//, '')}\t\t")
+if !ARGV[0].nil?()
+  STDOUT.write("Ω #{ARGV[0].gsub(/.*\/server.*?\/.*?\//, '')}\t\t")
+end
