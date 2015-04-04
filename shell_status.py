@@ -26,12 +26,12 @@ class ShellStatusListener(sublime_plugin.EventListener):
     args = [command]
     if view.file_name() != None:
       path = os.path.dirname(view.file_name())
-      append(args, view.file_name())
+      args.append(view.file_name())
     else:
       path = '/'
 
-    process = subprocess.Popen(args,
-      stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=path)
+    process = subprocess.Popen(args, stdout=subprocess.PIPE,
+      stderr=subprocess.PIPE, cwd=path)
 
     status, err = process.communicate()
     status = status.decode('UTF-8').strip()

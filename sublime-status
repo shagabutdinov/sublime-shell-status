@@ -14,7 +14,7 @@ end
 battery = `acpi 2> /dev/null`
 if !battery.empty?()
   value = battery.match(/(\d+)%/)
-  if !value.nil?() && value[1].to_i() < 50
+  if !value.nil?() && value[1].to_i() < 95
     STDOUT.write("🔋 #{value}\t\t")
   end
 end
