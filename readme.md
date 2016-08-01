@@ -65,9 +65,11 @@ information nicely.
 
 Example comand (php):
 
-  ```
+  ```  
   #!/usr/bin/env php
-
+  <?php
+  
+  // don't forget to chmod u+x this file
   echo "Currently editing: " . $argv[1] . "\t\t";
   echo "Time is: " . date("H:i:s") . "\t\t";
   ```
