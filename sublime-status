@@ -20,5 +20,5 @@ if !battery.empty?()
 end
 
 if !ARGV[0].nil?()
-  STDOUT.write("Ω #{ARGV[0].gsub(/.*\/server.*?\/.*?\//, '')}\t\t")
+  STDOUT.write("Ω #{ARGV[0].gsub(/.*\/(server|src).*?\/.*?\//, '')}\t\t")
 end
