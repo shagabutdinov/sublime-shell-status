@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-STDOUT.write("ω#{Time.new.strftime("%H:%M")}\t\t")
+# STDOUT.write("ω#{Time.new.strftime("%H:%M")}\t")
 
 branch = `git branch 2> /dev/null | grep "*"`.gsub('* ', '')
 if branch.empty?()
@@ -8,17 +8,17 @@ if branch.empty?()
 end
 
 if !branch.empty?()
-  STDOUT.write("☢#{branch.strip()}\t\t")
+  STDOUT.write("☢#{branch.strip()}\t")
 end
 
-battery = `acpi 2> /dev/null`
-if !battery.empty?()
-  value = battery.match(/(\d+)%/)
-  if !value.nil?() && value[1].to_i() < 95
-    STDOUT.write("🔋 #{value}\t\t")
-  end
-end
+# battery = `acpi 2> /dev/null`
+# if !battery.empty?()
+#   value = battery.match(/(\d+)%/)
+#   if !value.nil?() && value[1].to_i() < 95
+#     STDOUT.write("🔋 #{value}\t")
+#   end
+# end
 
 if !ARGV[0].nil?()
-  STDOUT.write("Ω #{ARGV[0].gsub(/.*\/(server|src).*?\/.*?\//, '')}\t\t")
+  STDOUT.write("Ω #{ARGV[0].gsub(/^.*?\/(server|src)\/(.*?)\//, '')}\t")
 end
